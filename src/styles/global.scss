@@ -1,0 +1,84 @@
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/colors" as *;
+@use "./partials/paddings" as *;
+
+body {
+    overflow-x: hidden;
+    margin:0;
+}
+
+.login-container {
+    height: 100vh;
+}
+
+.logo {
+    position: relative;
+    width: 700px;
+    top: -470px;
+}
+
+.curved {
+    justify-content: center;
+    background-color: #f21d9d;
+    height:80px;
+}
+
+.svg {
+    margin-top: 60px;
+}
+
+.login-page {
+    margin-top: 24%;
+    position: relative;
+    left: 130px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 85%;
+    background-color: #ffffff00;
+    border-radius: 20px;
+    
+        &__fields {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 5%;
+            width: 100%;
+            max-width: 700px;
+            
+            input {
+                width: 60%;
+                height: 2.5em;
+                padding-left: 1em;
+                outline:none;
+                border: none;
+                color:black;
+                background-color: rgba(255, 255, 255, 0);
+                border-bottom: 2px solid black;
+                margin-top:2%;
+            }
+        }
+}
+
+
+
+.login-btn {
+    width: 200px;
+    height:50px;
+    padding: 10px;
+    border-radius: 50px;
+    border:none;
+    color:white;
+    background-color: #f21d9d;
+    transition: 200ms;
+}
+
+.login-btn:hover {
+    color:#f21d9d;
+    cursor:pointer;
+    border: 2px solid #f21d9d;
+    background-color: white;
+}

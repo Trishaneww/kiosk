@@ -1,0 +1,47 @@
+@use "../../styles/partials//mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles//partials/colors" as *;
+@use "../../styles/partials/paddings" as *;
+
+
+.navbar {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+
+    &-links {
+        width: 100px;
+        display:flex;
+        justify-content: space-between;
+        margin-right: 5%;
+    }
+
+    & img {
+        max-width: 120px;
+    }
+}
+
+.main {
+    display:flex;
+}
+
+.sidebar {
+    display:flex;
+    height: 100vh;
+    flex-direction: column;
+    margin-top: 1.5%;
+    padding: 0 10px 0 30px;
+
+
+    &-link {
+        display:flex;
+        align-items: center;
+        width: 150px;
+
+
+        & p {
+            margin-left: 20px;
+        }
+    }
+}
