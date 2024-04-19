@@ -61,8 +61,8 @@ const Viewmenu = () => {
   return (
     <>
       <div className="menu">
-        <div>
-          <section className="menu-categories">
+        <div className="menu-display">
+          <section className="menu-display__categories">
             {categories.map((category) => (
               <div>
                 <p>{category.name}</p>
@@ -70,7 +70,7 @@ const Viewmenu = () => {
             ))}
           </section>
 
-          <section className="menu-items">
+          <section className="menu-display__items">
             {menuItems.map((item)=> (
                 <Link className="link" to={`/menu/${item.id}`}>
                     <Item key={item.id} price={item.price} name={item.name} calories={item.calories}/>
@@ -85,6 +85,21 @@ const Viewmenu = () => {
               {selected.map((item) => (
                 <CartItem key={item.id} name={item.name} price={item.price}/>
               ))}
+            </div>
+
+            <div className="menu-cart__checkout">
+              <p className="menu-cart__checkout-header">Items</p>
+              <p className="menu-cart__checkout-price">$45.89</p>
+            </div>
+
+            <div className="menu-cart__checkout">
+              <p className="menu-cart__checkout-header">Tax(15%)</p>
+              <p className="menu-cart__checkout-price">$6.20</p>
+            </div>
+
+            <div className="menu-cart__checkout">
+              <p className="menu-cart__checkout-header">Total</p>
+              <p className="menu-cart__checkout-price">$51.89</p>
             </div>
             <button className="menu-cart__btn">Purchase</button>
 
