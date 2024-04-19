@@ -1,5 +1,38 @@
 .link {
     text-decoration: none;
+    height:300px;
+}
+
+.menu-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 65px 10px 50px;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 410px;
+
+        &-logo {
+            font-size: 22px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            transform:scale(3,1);
+            -webkit-transform:scale(1.2,1);
+            letter-spacing: 3px;
+        }
+
+        & span {
+            color:#1dc0f2;
+        }
+    }
+
+    &__location {
+        display:flex;
+        align-items: center;
+    }
 }
 
 .menu {
@@ -7,30 +40,40 @@
     justify-content: center;
     height: 100vh;
 
+
     &-display {
         display: flex;
-        flex-direction: column;
         width: 190%;
 
         &__categories {
+            width: 400px;
+            padding:10px 0px 10px 20px;
             display:flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            &-select:hover {
+                cursor:pointer;
+            }
     
             & p {
-                margin: 0 1rem 0 1rem;
+                margin: 1rem 1rem 1rem 1rem;
             }
         }
     
         &__items {
-            display:flex;
+            display:inline-flex;
             flex-wrap: wrap;
-            justify-content: center;
+            // display:flex;
+            // flex-wrap: wrap;
+            // justify-content: center;
+            // align-items: center;
         }
     }
 
     &-cart {
         width: 50%;
         display:flex;
-        justify-content: center;
         align-items: center;
         flex-direction: column;
 
