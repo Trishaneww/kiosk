@@ -158,6 +158,8 @@ const Viewmenu = () => {
         </div>
         <FiLogOut size={25}/>
       </navbar>
+
+      
       <div className="menu">
         <div className="menu-display">
           <section className="menu-display__categories">

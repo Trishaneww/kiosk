@@ -9,6 +9,7 @@
     align-items: center;
     padding: 10px 65px 10px 50px;
 
+
     &__container {
         display: flex;
         justify-content: space-between;
@@ -39,10 +40,14 @@
     display: flex;
     justify-content: center;
     height: 100vh;
+    padding-top: 10px;
+    background-color: rgb(246, 246, 246);
 
 
     &-display {
         display: flex;
+        // justify-content: center;
+        align-items: flex-start;
         width: 190%;
 
         &__categories {
@@ -62,17 +67,15 @@
         }
     
         &__items {
-            display:inline-flex;
             flex-wrap: wrap;
-            // display:flex;
-            // flex-wrap: wrap;
-            // justify-content: center;
-            // align-items: center;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
         }
     }
 
     &-cart {
-        width: 50%;
+        width: 55%;
         display:flex;
         align-items: center;
         flex-direction: column;
