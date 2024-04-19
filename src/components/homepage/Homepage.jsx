@@ -1,4 +1,4 @@
-import React from 'react'
+import './Homepage.scss';
 import Navbar from '../navbar/Navbar';
 
 const Homepage = () => {

@@ -1,5 +1,5 @@
-import React from 'react'
-import './Navbar.scss'
+import React from "react";
+import "./Navbar.scss";
 import { MdRestaurantMenu } from "react-icons/md";
 import { AiFillHome } from "react-icons/ai";
 import { TfiStatsUp } from "react-icons/tfi";
@@ -7,54 +7,52 @@ import { HiDocumentText } from "react-icons/hi2";
 import { IoIosSettings } from "react-icons/io";
 import { GoStarFill } from "react-icons/go";
 import { RiLogoutBoxRLine } from "react-icons/ri";
-import logo from '../../assets/logo.png';
-
-
+import logo from "../../assets/logo.png";
 
 const Homepage = () => {
   return (
     <>
       <div className="main">
         <section className="sidebar">
-          <img className="sidebar-logo" src={logo} alt="kiosk logo" />
+          <p className="sidebar-logo">FOOD<span>BYTE</span></p>
           <div className="sidebar-link">
-            <AiFillHome />
+            <AiFillHome size={20} />
             <p>Home</p>
           </div>
 
           <div className="sidebar-link">
-            <MdRestaurantMenu />
+            <MdRestaurantMenu size={20} />
             <p>Menu</p>
           </div>
 
           <div className="sidebar-link">
-            <TfiStatsUp />
+            <TfiStatsUp size={20} />
             <p>Performance</p>
           </div>
 
           <div className="sidebar-link">
-            <GoStarFill />
+            <GoStarFill size={20} />
             <p>Feedback</p>
           </div>
 
           <div className="sidebar-link">
-            <HiDocumentText />
+            <HiDocumentText size={20} />
             <p>Orders</p>
           </div>
 
           <div className="sidebar-link">
-            <IoIosSettings />
+            <IoIosSettings size={20} />
             <p>Settings</p>
-          </div> 
+          </div>
 
           <div className="sidebar-link">
-            <RiLogoutBoxRLine  />
+            <RiLogoutBoxRLine size={20} />
             <p>Logout</p>
-          </div> 
+          </div>
         </section>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;

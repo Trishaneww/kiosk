@@ -1,3 +1,9 @@
+@use "../../styles/partials//mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles//partials/colors" as *;
+@use "../../styles/partials/paddings" as *;
+
+
 .link {
     text-decoration: none;
     height:300px;
@@ -51,7 +57,7 @@
         width: 190%;
 
         &__categories {
-            width: 400px;
+            width: 500px;
             padding:10px 0px 10px 20px;
             display:flex;
             flex-direction: column;
