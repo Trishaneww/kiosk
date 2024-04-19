@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Item from '../item/Item';
+import CartItem from '../cartItem/CartItem';
 
 const Viewmenu = () => {
 //   const [menuItems, setMenuItems] = useState([]);
@@ -13,6 +14,8 @@ const Viewmenu = () => {
 //     };
 //     fetchData();
 //   }, []);
+
+  const selected = []
 
   const categories = [
     {
@@ -78,6 +81,12 @@ const Viewmenu = () => {
 
         <div className="menu-cart">
           <div>
+            <div>
+              {selected.map((item) => (
+                <CartItem key={item.id} name={item.name} price={item.price}/>
+              ))}
+            </div>
+            <button className="menu-cart__btn">Purchase</button>
 
           </div>
 
