@@ -15,7 +15,32 @@ const Viewmenu = () => {
 //     fetchData();
 //   }, []);
 
-  const selected = []
+  const selected = [
+    {
+      id:1,
+      name:'Meat Lovers',
+      price:15.25,
+      calories: 1200
+  },
+  {
+      id:1,
+      name:'Cheese Lovers',
+      price:11.25,
+      calories: 1200
+  },
+  {
+      id:1,
+      name:'Pepporoni Lovers',
+      price:13.25,
+      calories: 1200
+  },
+  {
+    id:1,
+    name:'Canadian Lovers',
+    price:15.25,
+    calories: 1200
+  }
+  ]
 
   const categories = [
     {
@@ -55,7 +80,13 @@ const Viewmenu = () => {
         name:'Pepporoni Lovers',
         price:13.25,
         calories: 1200
-    }
+    },
+    {
+      id:1,
+      name:'Canadian Lovers',
+      price:15.25,
+      calories: 1200
+  }
 ]
 
   return (
@@ -81,6 +112,10 @@ const Viewmenu = () => {
 
         <div className="menu-cart">
           <div>
+            <div className="menu-cart__order">
+              <p className="menu-cart__order-title">ORDER</p>
+              <p className="menu-cart__order-number">#20378</p>
+            </div>
             <div>
               {selected.map((item) => (
                 <CartItem key={item.id} name={item.name} price={item.price}/>
@@ -88,18 +123,18 @@ const Viewmenu = () => {
             </div>
 
             <div className="menu-cart__checkout">
-              <p className="menu-cart__checkout-header">Items</p>
-              <p className="menu-cart__checkout-price">$45.89</p>
+              <p className="menu-cart__checkout-title">Items</p>
+              <p>$45.89</p>
             </div>
 
             <div className="menu-cart__checkout">
-              <p className="menu-cart__checkout-header">Tax(15%)</p>
-              <p className="menu-cart__checkout-price">$6.20</p>
+              <p className="menu-cart__checkout-title">Tax(15%)</p>
+              <p>$6.20</p>
             </div>
 
             <div className="menu-cart__checkout">
-              <p className="menu-cart__checkout-header">Total</p>
-              <p className="menu-cart__checkout-price">$51.89</p>
+              <p className="menu-cart__checkout-title">Total</p>
+              <p>$51.89</p>
             </div>
             <button className="menu-cart__btn">Purchase</button>
 

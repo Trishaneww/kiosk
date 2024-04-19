@@ -30,13 +30,30 @@
     &-cart {
         width: 50%;
         display:flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-        background-color: rgb(199, 227, 227);
+
+        &__order {
+            width: 260px;
+            display:flex;
+            justify-content: space-between;
+
+            &-title {
+                font-weight: 700;
+                font-size: 30px;
+            }
+
+            &-number {
+                font-weight: 400;
+                font-size: 30px;
+            }
+        }
         
 
         &__btn {
             width: 100%;
-            max-width: 200px;
+            max-width: 260px;
             height:35px;
             padding: 10px;
             border-radius: 10px;
@@ -51,14 +68,13 @@
         }
 
         &__checkout {
-            width: 200px;
+            width: 260px;
             display: flex;
+            justify-content: space-between;
 
-            &-price {
-                margin-left: 100px;
+            &-title {
+                color: rgb(153, 153, 153);
             }
-
-
         }
     }
 }
