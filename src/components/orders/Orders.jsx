@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Navbar from "../navbar/Navbar";
 import { BsThreeDots } from "react-icons/bs";
+import { FaCalendar } from "react-icons/fa";
 
 const Orders = () => {
   const [search, setSearch] = useState({
@@ -102,6 +103,11 @@ const Orders = () => {
             placeholder="Search Order Id"
             onChange={handleChange}
           />
+
+          <div className="order-history__nav-calender">
+            <FaCalendar color="white" />
+            <p>January 21, 2024</p>
+          </div>
 
         </navbar>
         <div className="order-history__categories">
