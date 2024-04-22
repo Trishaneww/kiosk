@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -28,6 +28,16 @@ const Login = () => {
 
         <form className="login-form">
           <h1>FOOD<span>BYTE</span></h1>
+
+          <div className="login-form__fields">
+             <input
+               name="store"
+               type="text"
+               placeholder="Store Name"
+               onChange={handleChange}
+             />
+          </div>
+
           <div className="login-form__fields">
              <input
                name="email"
@@ -39,9 +49,9 @@ const Login = () => {
 
           <div className="login-form__fields">
              <input
-               name="permission"
+               name="address"
                type="text"
-               placeholder="Manager Access"
+               placeholder="Address"
                onChange={handleChange}
              />
           </div>
@@ -56,11 +66,11 @@ const Login = () => {
           </div>
 
           <button className="login-page__btn">Login</button>
-          <p className="login-page__signup-link">Dont have an account? <Link to="/signup">Sign up</Link></p>
+          <p className="login-page__signup-link">Already have an account? <Link to="/login">Login</Link></p>
          </form>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

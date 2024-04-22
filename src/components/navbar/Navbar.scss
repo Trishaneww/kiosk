@@ -1,0 +1,66 @@
+@use "../../styles/partials//mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles//partials/colors" as *;
+@use "../../styles/partials/paddings" as *;
+
+
+// .navbar {
+//     display:flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     height: 80px;
+
+//     &-links {
+//         width: 100px;
+//         display:flex;
+//         justify-content: space-between;
+//         margin-right: 5%;
+//     }
+
+//     & img {
+//         max-width: 120px;
+//     }
+// }
+
+.main {
+    display:flex;
+}
+
+.sidebar {
+    display:flex;
+    height: 100vh;
+    flex-direction: column;
+    padding: 0 10px 0 30px;
+
+    & img {
+        width: 30%;
+    }
+
+    &-logo {
+        font-size: 24px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        transform:scale(3,1);
+        -webkit-transform:scale(1.2,1);
+        letter-spacing: 3px;
+        margin: 2rem 0 2rem 1rem;
+    }
+    
+    & span {
+        color:#1dc0f2;
+    }
+
+    &-link {
+        display:flex;
+        align-items: center;
+        width: 180px;
+
+        &:hover {
+            cursor:pointer;
+        }
+
+        & p {
+            margin-left: 20px;
+        }
+    }
+}

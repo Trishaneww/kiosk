@@ -1,0 +1,40 @@
+.cart-item {
+    width: 240px;
+    margin: 2rem 0 2rem 0;
+    display: flex;
+    align-items: flex-start;
+
+    & img {
+        max-height: 50px;
+        max-width: 50px;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 10%;
+
+        &-title {
+            font-weight:700;
+            font-size: 18px;
+            margin:0;
+        }
+
+        &-price {
+            margin: 0em 0 0 0;
+        }
+
+        &-note {
+            margin:0.5rem 0 0.5rem 0;
+            font-size: 12px;
+            color: rgb(153, 153, 153);
+        }
+    }
+
+    &__edit {
+        width: 190px;
+        display:flex;
+        justify-content: flex-end;
+    }
+}
