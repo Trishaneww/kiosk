@@ -1,21 +1,27 @@
-import './Performance.scss'
-import "../../styles/global.scss";
-import Navbar from '../navbar/Navbar'
-import { Line } from 'react-chartjs-2';
+import React from 'react'
+import { Line } from "react-chartjs-2";
 import {
-    Chart as ChartJS,
-    LineElement,
-    CategoryScale,
-    LinearScale,
-    PointElement
-} from 'Chart-js';
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+} from "chart.js";
 
-ChartJS.register (
-    LineElement,
-    CategoryScale,
-    LinearScale,
-    PointElement
-)
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  Legend,
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement
+);
+
+const LineChart = () => {
 
 const data = {
     labels: [
@@ -66,15 +72,11 @@ const data = {
       },
     },
   };
-
-
-const Performance = () => {
   return (
-    <div className="main">
-        <Navbar />
+    <div>
         <Line data={data} options={options} />
     </div>
   )
 }
 
-export default Performance
+export default LineChart

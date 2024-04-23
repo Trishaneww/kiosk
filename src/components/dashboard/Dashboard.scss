@@ -1,0 +1,27 @@
+.dashboard {
+    width: 100%;
+    padding: 4rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__line {
+        width: 1000px;
+    }
+
+    &__products {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 800px;
+        background-color: rgb(176, 176, 176);
+        border-radius: 20px;
+
+        &-doughnut {
+            padding:1rem;
+            width: 200px;
+        }
+    }
+}

@@ -5,7 +5,7 @@ import Login from './components/login/Login';
 import Signup from './components/signup/Signup';
 import Viewmenu from './components/viewmenu/Viewmenu';
 import Orders from './components/orders/Orders';
-
+import Dashboard from './components/dashboard/Dashboard'
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +16,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/menu/:id' element={<Viewmenu />} />
           <Route path='/orders' element={<Orders />} />
+          <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </div>
     
