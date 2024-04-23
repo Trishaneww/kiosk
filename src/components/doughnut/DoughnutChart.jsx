@@ -7,8 +7,12 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const data = {
   datasets: [
     {
-      data: [3, 6, 8, 9],
-      backgroundColor: ["red", "blue", "green"],
+      data: [6, 8, 9],
+      backgroundColor: [
+        "rgb(102, 0, 255",
+        "rgb(255, 0, 115)",
+        "rgb(230, 0, 255)",
+      ],
       borderColor: ["rgba(0, 0, 0, 0)"],
       cutout: "90%",
       borderRadius: 20,

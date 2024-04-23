@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -22,8 +22,7 @@ ChartJS.register(
 );
 
 const LineChart = () => {
-
-const data = {
+  const data = {
     labels: [
       "Sep",
       "Oct",
@@ -40,9 +39,25 @@ const data = {
     ],
     datasets: [
       {
-        data: [8, 9, 12, 6, 12, 14, 18, 18, 13, 16, 3, 8],
+        data: [
+          8000, 9000, 12000, 8000, 11000, 14000, 9000, 10000, 13000, 16000,
+          6000, 8000,
+        ],
         backgroundColor: "transparent",
-        borderColor: "#f7b4ff",
+        borderColor: "#f21d9d",
+        pointBorderColor: "transparent",
+        pointBorderWidth: 4,
+        borderWidth: 6,
+        tension: 0.5,
+        fill: true,
+      },
+      {
+        data: [
+          5000, 8000, 8000, 11000, 9000, 6700, 7500, 2000, 12000, 5000, 6200,
+          8900,
+        ],
+        backgroundColor: "transparent",
+        borderColor: "#1dc0f2",
         pointBorderColor: "transparent",
         pointBorderWidth: 4,
         borderWidth: 6,
@@ -50,7 +65,7 @@ const data = {
       },
     ],
   };
-  
+
   const options = {
     plugins: {
       legend: false,
@@ -62,7 +77,8 @@ const data = {
         },
       },
       y: {
-        max: 20,
+        min: 0,
+        max: 16000,
         ticks: {
           stepSize: 2,
         },
@@ -74,9 +90,9 @@ const data = {
   };
   return (
     <div>
-        <Line data={data} options={options} />
+      <Line data={data} options={options} />
     </div>
-  )
-}
+  );
+};
 
-export default LineChart
+export default LineChart;
