@@ -6,6 +6,8 @@ import Signup from './components/signup/Signup';
 import Viewmenu from './components/viewmenu/Viewmenu';
 import Orders from './components/orders/Orders';
 import Dashboard from './components/dashboard/Dashboard'
+import ManageProducts from './components/manageProducts/ManageProducts';
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +19,7 @@ function App() {
           <Route path='/menu/:id' element={<Viewmenu />} />
           <Route path='/orders' element={<Orders />} />
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path="/manageproducts" element={<ManageProducts />} />
         </Routes>
       </div>
     

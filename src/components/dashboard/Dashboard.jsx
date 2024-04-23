@@ -7,6 +7,7 @@ import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { MdOutlineFastfood } from "react-icons/md";
 
+
 const Dashboard = () => {
   return (
     <div className="main">
@@ -102,8 +103,9 @@ const Dashboard = () => {
                 <p className="dashboard__products-display-container-stats-name">Product A (40%)</p>
                 <p className="dashboard__products-display-container-stats-number">$9,253</p>
               </div>
-              
             </div>
+
+            <button className="dashboard__products-display-btn">See More</button>
           </section>
         </div>
       </div>
