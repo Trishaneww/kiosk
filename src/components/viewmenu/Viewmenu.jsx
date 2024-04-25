@@ -47,27 +47,27 @@ const Viewmenu = () => {
   const categories = [
     {
       id: 1,
-      name: "Pizza Combos",
+      name: "Bowl Combos",
     },
     {
       id: 2,
-      name: "Signature Pizzas",
+      name: "Signature Bowls",
     },
     {
       id: 3,
-      name: "Custom Pizzas",
+      name: "Custom Bowl",
     },
     {
       id: 4,
-      name: "Burger Combos",
+      name: "Burrito Combos",
     },
     {
       id: 4,
-      name: "Signature Burgers",
+      name: "Signature Burritos",
     },
     {
       id: 4,
-      name: "Custom Burgers",
+      name: "Custom Burrito",
     },
     {
       id: 5,
