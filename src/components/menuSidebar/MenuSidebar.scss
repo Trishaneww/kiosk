@@ -1,0 +1,56 @@
+@use "../../styles/partials//mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles//partials/colors" as *;
+@use "../../styles/partials/paddings" as *;
+
+
+.main {
+    display:flex;
+}
+
+.sidebar {
+    display:flex;
+    height:100vh;
+    flex-direction: column;
+    padding: 0 60px 0 30px;
+    background-color: white;
+    gap:1rem;
+
+    & img {
+        width: 30%;
+    }
+
+    &-logo {
+        font-size: 24px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        transform:scale(3,1);
+        -webkit-transform:scale(1.2,1);
+        letter-spacing: 3px;
+        margin: 2rem 0 2rem 2rem;
+    }
+    
+    & span {
+        color:#1dc0f2;
+    }
+
+    &-link {
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 160px;
+        height:35px;
+        border-radius:50px;
+        transition: 200ms;
+
+        &:hover {
+            cursor:pointer;
+            background-color: rgb(4, 151, 1);
+            color:white;
+        }
+
+        & p {
+            margin-left: 20px;
+        }
+    }
+}

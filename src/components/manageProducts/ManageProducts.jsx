@@ -4,12 +4,7 @@ import Navbar from "../navbar/Navbar";
 import { MdOutlineAdd } from "react-icons/md";
 import { SlArrowDown } from "react-icons/sl";
 import { useState } from "react";
-import product1 from "../../assets/product1.png";
-import product2 from "../../assets/product2.png";
-import product3 from "../../assets/product3.png";
-import product4 from "../../assets/product4.png";
-import product5 from "../../assets/product5.png";
-import product6 from "../../assets/product6.png";
+import ProductChart from '../productChart/ProductChart';
 
 const ManageProducts = () => {
   const [search, setSearch] = useState({
@@ -119,7 +114,9 @@ const ManageProducts = () => {
                 </p>
               </div>
             </div>
-            <div className="product-dashboard-sidebar-analytics-graph"></div>
+            <div className="product-dashboard-sidebar-analytics-graph">
+                <ProductChart />
+            </div>
           </section>
         </div>
 
@@ -185,11 +182,11 @@ const ManageProducts = () => {
               </div>
 
               <div className="product-dashboard-display-categories-price">
-                <p>{product.price}</p>
+                <p>${product.price}</p>
               </div>
 
               <div className="product-dashboard-display-categories-cost">
-                <p>{product.cost}</p>
+                <p>${product.cost}</p>
               </div>
 
               <div className="product-dashboard-display-categories-status">

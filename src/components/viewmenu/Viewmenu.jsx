@@ -1,6 +1,7 @@
 import "./Viewmenu.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import MenuSidebar from '../menuSidebar/MenuSidebar';
 import { Link, useNavigate } from "react-router-dom";
 import Item from "../item/Item";
 import CartItem from "../cartItem/CartItem";
@@ -235,7 +236,7 @@ const Viewmenu = () => {
 
   return (
     <>
-      <navbar className="menu-navbar">
+      {/* <navbar className="menu-navbar">
         <div className="menu-navbar__container">
           <p className="menu-navbar__container-logo">FOOD<span>BYTE</span></p>
           <div className="menu-navbar__location">
@@ -244,18 +245,19 @@ const Viewmenu = () => {
           </div>
         </div>
         <FiLogOut size={25}/>
-      </navbar>
+      </navbar> */}
 
       
       <div className="menu">
         <div className="menu-display">
-          <section className="menu-display__categories">
+          {/* <section className="menu-display__categories">
             {categories.map((category) => (
               <div className="menu-display__categories-select">
                 <p>{category.name}</p>
               </div>
             ))}
-          </section>
+          </section> */}
+          <MenuSidebar />
 
           <section className="menu-display__items">
             {products.map((product) => (

@@ -45,9 +45,7 @@
 .menu {
     display: flex;
     justify-content: center;
-    height: 100vh;
-    padding-top: 10px;
-    background-color: rgb(226, 226, 226);
+    background-color: rgb(244, 244, 244);
 
 
     &-display {
@@ -56,18 +54,21 @@
         width: 190%;
 
         &__categories {
-            width: 600px;
+            height: 100%;
+            width: 900px;
             padding: 1rem 0rem 0 1.2rem;
             display:flex;
             flex-direction: column;
             align-items: flex-start;
             gap:1rem;
+            background-color: white;
+
 
             &-select {
                 display:flex;
                 justify-content: flex-start;
                 align-items: center;
-                width: 170px;
+                width: 160px;
                 height:35px;
                 border-radius:50px;
                 transition: 200ms;
@@ -89,7 +90,8 @@
             display:flex;
             flex-wrap: wrap;
             justify-content: flex-start;
-            gap: 0.5rem;
+            padding: 1rem 1rem 0 2rem;
+            gap: 1rem;
         }
     }
 
@@ -98,6 +100,10 @@
         display:flex;
         align-items: center;
         flex-direction: column;
+        background-color: white;
+        border-radius: 20px;
+        height:91vh;
+        margin: 1rem 1rem 0 0rem;
 
         &__order {
             width: 260px;
