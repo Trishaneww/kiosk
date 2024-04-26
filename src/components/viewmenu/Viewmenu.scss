@@ -74,7 +74,7 @@
 
                 &:hover {
                     cursor:pointer;
-                    background-color: black;
+                    background-color: rgb(4, 151, 1);
                     color:white;
                 }
             }
@@ -145,4 +145,9 @@
             }
         }
     }
+}
+
+#selected {
+    background-color: rgb(4, 151, 1);
+    color:white;
 }
