@@ -84,80 +84,7 @@ const ManageProducts = () => {
       cost: 7,
       status: true,
     },
-    {
-      id: 8,
-      orderid: "V8NV3",
-      name: "Fiesta Salad",
-      calories: 390,
-      price: 11.49,
-      cost: 7,
-      status: true,
-    },
-    {
-      id: 9,
-      orderid: "TF2V3",
-      name: "Greek Salad",
-      calories: 580,
-      price: 11.49,
-      cost: 8.75,
-      status: true,
-    },
-    {
-      id: 10,
-      orderid: "TF2V3",
-      name: "Kale Ceasar Salad",
-      calories: 670,
-      price: 11.49,
-      cost: 7,
-      status: true,
-    },
-    {
-      id: 11,
-      orderid: "L9PM5",
-      name: "Berri Crunchii Salad",
-      calories: 630,
-      price: 11.99,
-      cost: 7,
-      status: false,
-    },
-    {
-      id: 12,
-      orderid: "K1PO5",
-      name: "Texas SmokeHouse Roll",
-      calories: 840,
-      price: 12.99,
-      cost: 8,
-      status: false,
-    },
-    {
-      id: 13,
-      orderid: "G6N90",
-      name: "Spicy Buffalo Roll",
-      calories: 580,
-      price: 10.99,
-      cost: 7,
-      status: false,
-    },
-    {
-      id: 14,
-      orderid: "D34LP",
-      name: "Sesame Crunch Roll",
-      calories: 490,
-      price: 9.29,
-      cost: 8,
-      status: false,
-    },
-    {
-      id: 15,
-      orderid: "A36XM",
-      name: "Zestii Zaatar Burrito",
-      calories: 530,
-      price: 11.99,
-      cost: 8,
-      status: false,
-    },
   ];
-
 
   return (
     <div className="main">
@@ -173,8 +100,26 @@ const ManageProducts = () => {
             onChange={handleChange}
           />
 
-          <section className="product-dashboard-sidebar-stats">
-            <div className="product-dashboard-sidebar-stats-graph"></div>
+          <section className="product-dashboard-sidebar-analytics">
+            <div className="product-dashboard-sidebar-analytics-display">
+              <div className="product-dashboard-sidebar-analytics-display-container">
+                <p className="product-dashboard-sidebar-analytics-display-container-header">
+                  Purchased
+                </p>
+                <p className="product-dashboard-sidebar-analytics-display-container-number">
+                  128<span>bowls</span>
+                </p>
+              </div>
+              <div className="product-dashboard-sidebar-analytics-display-container">
+                <p className="product-dashboard-sidebar-analytics-display-container-header">
+                  Available
+                </p>
+                <p className="product-dashboard-sidebar-analytics-display-container-number">
+                  32<span>bowls</span>
+                </p>
+              </div>
+            </div>
+            <div className="product-dashboard-sidebar-analytics-graph"></div>
           </section>
         </div>
 

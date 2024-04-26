@@ -19,29 +19,41 @@ const Viewmenu = () => {
 
   const selected = [
     {
-      id: 1,
-      name: "Meat Lovers",
-      price: 15.25,
-      calories: 1200,
+      id: 4,
+      orderid: "Z9KP1",
+      name: "Tikka Bowl",
+      calories: 590,
+      price: 14.79,
+      cost: 10,
+      status: false,
     },
     {
-      id: 1,
-      name: "Cheese Lovers",
-      price: 11.25,
-      calories: 1200,
+      id: 9,
+      orderid: "TF2V3",
+      name: "Greek Salad",
+      calories: 580,
+      price: 11.49,
+      cost: 8.75,
+      status: true,
     },
     {
-      id: 1,
-      name: "Pepporoni Lovers",
-      price: 13.25,
-      calories: 1200,
+      id: 10,
+      orderid: "TF2V3",
+      name: "Kale Ceasar Salad",
+      calories: 670,
+      price: 11.49,
+      cost: 7,
+      status: true,
     },
     {
-      id: 1,
-      name: "Canadian Lovers",
-      price: 15.25,
-      calories: 1200,
-    },
+      id: 12,
+      orderid: "K1PO5",
+      name: "Texas SmokeHouse Roll",
+      calories: 840,
+      price: 12.99,
+      cost: 8,
+      status: false,
+    }
   ];
 
   const categories = [
@@ -268,7 +280,7 @@ const Viewmenu = () => {
             </div>
             <div>
               {selected.map((item) => (
-                <CartItem key={item.id} name={item.name} price={item.price} />
+                <CartItem key={item.id} name={item.name} price={item.price} id={item.id}/>
               ))}
             </div>
 
