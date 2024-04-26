@@ -5,6 +5,7 @@ import { MdOutlineAdd } from "react-icons/md";
 import { SlArrowDown } from "react-icons/sl";
 import { useState } from "react";
 import ProductChart from '../productChart/ProductChart';
+import { IoSearchSharp } from "react-icons/io5";
 
 const ManageProducts = () => {
   const [search, setSearch] = useState({
@@ -87,13 +88,24 @@ const ManageProducts = () => {
 
       <div className="product-dashboard">
         <div className="product-dashboard-sidebar">
-          <input
-            className="product-dashboard-sidebar-searchbar"
-            name="search"
-            type="text"
-            placeholder="search for items"
-            onChange={handleChange}
-          />
+          {/* <div className=""> 
+            <input
+              className="product-dashboard-sidebar-searchbar"
+              name="search"
+              type="text"
+              placeholder="search for items"
+              onChange={handleChange}
+            />
+            <IoSearchSharp className="product-dashboard-sidebar-searchbar-icon" /> */}
+            <div className="searchbar">
+              <input
+                name="search"
+                type="text"
+                placeholder="search for items"
+                onChange={handleChange}
+              />
+              <IoSearchSharp className="searchbar__icon" size={22} />
+            </div>
 
           <section className="product-dashboard-sidebar-analytics">
             <div className="product-dashboard-sidebar-analytics-display">

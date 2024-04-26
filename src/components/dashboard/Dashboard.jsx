@@ -7,7 +7,6 @@ import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { MdOutlineFastfood } from "react-icons/md";
 
-
 const Dashboard = () => {
   return (
     <div className="main">
@@ -47,7 +46,7 @@ const Dashboard = () => {
             <div className="dashboard__stats-container">
               <div className="dashboard__stats-container-header">
                 <p className="dashboard__stats-container-header-title">
-                  Transactions
+                  Average
                 </p>
                 <div className="dashboard__stats-container-header-percentage">
                   <FaArrowUp />
@@ -76,36 +75,54 @@ const Dashboard = () => {
               </div>
 
               <div className="dashboard__products-display-container-stats">
-                <p className="dashboard__products-display-container-stats-name">Product A (40%)</p>
-                <p className="dashboard__products-display-container-stats-number">$9,253</p>
+                <p className="dashboard__products-display-container-stats-name">
+                  Product A (40%)
+                </p>
+                <p className="dashboard__products-display-container-stats-number">
+                  $9,253
+                </p>
               </div>
-              
             </div>
 
             <div className="dashboard__products-display-container">
-              <div className="dashboard__products-display-container-image" id="productb">
+              <div
+                className="dashboard__products-display-container-image"
+                id="productb"
+              >
                 <MdOutlineFastfood size={25} />
               </div>
 
               <div className="dashboard__products-display-container-stats">
-                <p className="dashboard__products-display-container-stats-name">Product A (40%)</p>
-                <p className="dashboard__products-display-container-stats-number">$9,253</p>
+                <p className="dashboard__products-display-container-stats-name">
+                  Product B (25%)
+                </p>
+                <p className="dashboard__products-display-container-stats-number">
+                  $6,920
+                </p>
               </div>
-              
             </div>
 
             <div className="dashboard__products-display-container">
-              <div className="dashboard__products-display-container-image" id="productc">
+              <div
+                className="dashboard__products-display-container-image"
+                id="productc"
+              >
                 <MdOutlineFastfood size={25} />
               </div>
 
               <div className="dashboard__products-display-container-stats">
-                <p className="dashboard__products-display-container-stats-name">Product A (40%)</p>
-                <p className="dashboard__products-display-container-stats-number">$9,253</p>
+                <p className="dashboard__products-display-container-stats-name">
+                  Product C (15%)
+                </p>
+                <p className="dashboard__products-display-container-stats-number">
+                  $3,999
+                </p>
               </div>
             </div>
 
-            <button className="dashboard__products-display-btn">See More</button>
+            <button className="dashboard__products-display-btn">
+              See More
+            </button>
           </section>
         </div>
       </div>

@@ -115,7 +115,7 @@ const ProductChart = () => {
     <div className="charts">
         <div className="charts-container">
             <div className="charts-container-analytics">
-                <p className="charts-container-analytics-header">SalesPrice</p>
+                <p className="charts-container-analytics-header">Salesprice</p>
                 <div className="charts-container-analytics-stats">
                     <p className="charts-container-analytics-stats-number">$14.90</p>
                     <div className="charts-container-analytics-stats-percentage">
