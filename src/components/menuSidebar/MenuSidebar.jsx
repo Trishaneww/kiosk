@@ -1,59 +1,40 @@
-import './MenuSidebar.scss';
+import "./MenuSidebar.scss";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const MenuSidebar = () => {
+  const [categories, setCategories] = useState([]);
 
-    const categories = [
-        {
-          id: 1,
-          name: "Bowl Combos",
-        },
-        {
-          id: 2,
-          name: "Signature Bowls",
-        },
-        {
-          id: 3,
-          name: "Custom Bowl",
-        },
-        {
-          id: 4,
-          name: "Roll Combos",
-        },
-        {
-          id: 4,
-          name: "Signature Rolls",
-        },
-        {
-          id: 4,
-          name: "Custom Roll",
-        },
-        {
-          id: 5,
-          name: "Sides",
-        },
-        {
-          id: 6,
-          name: "Drinks",
-        },
-        {
-          id: 7,
-          name: "Desserts",
-        },
-      ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("http://localhost:3307/categories");
+        setCategories(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  console.log(categories);
+
   return (
     <>
       <div className="main">
         <section className="sidebar">
-          <p className="sidebar-logo">FOOD<span>BYTE</span></p>
+          <p className="sidebar-logo">
+            FOOD<span>BYTE</span>
+          </p>
           {categories.map((category) => (
             <div className="sidebar-link">
-                <p>{category.name}</p>
+              <p>{category.title}</p>
             </div>
           ))}
         </section>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default MenuSidebar
+export default MenuSidebar;

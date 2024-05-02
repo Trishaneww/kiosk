@@ -9,6 +9,7 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
+  Filler,
 } from "chart.js";
 
 ChartJS.register(
@@ -18,7 +19,8 @@ ChartJS.register(
   LineElement,
   CategoryScale,
   LinearScale,
-  PointElement
+  PointElement,
+  Filler
 );
 
 const LineChart = () => {
@@ -40,55 +42,78 @@ const LineChart = () => {
     datasets: [
       {
         data: [
-          8000, 9000, 12000, 8000, 11000, 14000, 9000, 10000, 13000, 16000,
-          6000, 8000,
+          2000, 2000, 2000, 2500, 3000, 3200, 3800, 4000, 4400, 6000, 9200,
+          10200,
         ],
-        backgroundColor: "transparent",
-        borderColor: "#f21d9d",
-        pointBorderColor: "transparent",
-        pointBorderWidth: 4,
-        borderWidth: 6,
+        borderColor: "#20C59F",
+        pointBorderColor: "#20C59F",
+        pointBorderWidth: 3,
+        borderWidth: 3,
         tension: 0.5,
         fill: true,
-      },
-      {
-        data: [
-          5000, 8000, 8000, 11000, 9000, 6700, 7500, 2000, 12000, 5000, 6200,
-          8900,
-        ],
-        backgroundColor: "transparent",
-        borderColor: "#1dc0f2",
-        pointBorderColor: "transparent",
-        pointBorderWidth: 4,
-        borderWidth: 6,
-        tension: 0.5,
+        backgroundColor: (context) => {
+          const ctx = context.chart.ctx;
+          const gradient = ctx.createLinearGradient(0, 50, 0, 400);
+          gradient.addColorStop(0, "#20C59F");
+          gradient.addColorStop(1, "white");
+          return gradient;
+        },
       },
     ],
   };
-
   const options = {
     plugins: {
       legend: false,
     },
+    responsive: true,
     scales: {
-      x: {
+      y: {
+        ticks: {
+          font: {
+            size: 17,
+          },
+        },
+        min: 0,
         grid: {
           display: false,
         },
       },
-      y: {
-        min: 0,
-        max: 16000,
+      x: {
         ticks: {
-          stepSize: 2,
+          font: {
+            size: 17,
+          },
         },
         grid: {
-          borderDash: [10],
+          display: false,
         },
       },
     },
   };
-  
+
+  // const options = {
+  //   plugins: {
+  //     legend: false,
+  //   },
+  //   scales: {
+  //     x: {
+  //       grid: {
+  //         display: false,
+  //       },
+  //     },
+  //     y: {
+  //       min: 0,
+  //       max: 16000,
+  //       ticks: {
+  //         stepSize: 2,
+  //       },
+  //       grid: {
+  //         borderDash: [10],
+  //       },
+  //     },
+  //   },
+  // };
+
   return (
     <div>
       <Line data={data} options={options} />

@@ -113,31 +113,31 @@ const ProductChart = () => {
 
   return (
     <div className="charts">
-        <div className="charts-container">
-            <div className="charts-container-analytics">
-                <p className="charts-container-analytics-header">Salesprice</p>
-                <div className="charts-container-analytics-stats">
-                    <p className="charts-container-analytics-stats-number">$14.90</p>
-                    <div className="charts-container-analytics-stats-percentage">
-                        <p>4.2%</p>
-                    </div>
-                </div>
+      <div className="charts-container">
+        <div className="charts-container-analytics">
+          <p className="charts-container-analytics-header">Salesprice</p>
+          <div className="charts-container-analytics-stats">
+            <p className="charts-container-analytics-stats-number">$14.90</p>
+            <div className="charts-container-analytics-stats-percentage">
+              <p>4.2%</p>
             </div>
-            <Line data={data2} options={options} />
+          </div>
         </div>
+        <Line data={data2} options={options} />
+      </div>
 
-        <div className="charts-container">
-            <div className="charts-container-analytics">
-                <p className="charts-container-analytics-header">Sales</p>
-                <div className="charts-container-analytics-stats">
-                    <p className="charts-container-analytics-stats-number">128</p>
-                    <div className="charts-container-analytics-stats-percentage">
-                        <p>1.7%</p>
-                    </div>
-                </div>
+      <div className="charts-container">
+        <div className="charts-container-analytics">
+          <p className="charts-container-analytics-header">Sales</p>
+          <div className="charts-container-analytics-stats">
+            <p className="charts-container-analytics-stats-number">128</p>
+            <div className="charts-container-analytics-stats-percentage">
+              <p>1.7%</p>
             </div>
-            <Line data={data} options={options} />
+          </div>
         </div>
+        <Line data={data} options={options} />
+      </div>
     </div>
   );
 };

@@ -6,6 +6,12 @@ import Doughnut from "../doughnut/DoughnutChart";
 import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { MdOutlineFastfood } from "react-icons/md";
+import { LuFolders } from "react-icons/lu";
+import Incomechart from "../charts/IncomeChart";
+import Saleschart from "../charts/SalesChart";
+import Expenseschart from "../charts/ExpensesChart";
+import { IoFolderOutline } from "react-icons/io5";
+import { TbClockShare } from "react-icons/tb";
 
 const Dashboard = () => {
   return (
@@ -15,6 +21,53 @@ const Dashboard = () => {
         <div>
           <section className="dashboard__stats">
             <div className="dashboard__stats-container">
+              <div className="dashboard__stats-container-icon">
+                <IoFolderOutline size={25} />
+              </div>
+              <div className="dashboard__stats-container-info">
+                <p className="dashboard__stats-container-info-header">
+                  Total Income
+                </p>
+                <p className="dashboard__stats-container-info-number">
+                  $92,820
+                </p>
+              </div>
+              <div className="dashboard__stats-container-chart">
+                <Incomechart />
+              </div>
+            </div>
+
+            <div className="dashboard__stats-container">
+              <div className="dashboard__stats-container-icon">
+                <TbClockShare size={25} />
+              </div>
+              <div className="dashboard__stats-container-info">
+                <p className="dashboard__stats-container-info-header">
+                  Total Sales
+                </p>
+                <p className="dashboard__stats-container-info-number">3,468</p>
+              </div>
+              <div className="dashboard__stats-container-chart">
+                <Saleschart />
+              </div>
+            </div>
+
+            <div className="dashboard__stats-container">
+              <div className="dashboard__stats-container-icon">
+                <LuFolders size={25} />
+              </div>
+              <div className="dashboard__stats-container-info">
+                <p className="dashboard__stats-container-info-header">
+                  Total Expenses
+                </p>
+                <p className="dashboard__stats-container-info-number">$7,234</p>
+              </div>
+              <div className="dashboard__stats-container-chart">
+                <Expenseschart />
+              </div>
+            </div>
+
+            {/* <div className="dashboard__stats-container">
               <div className="dashboard__stats-container-header">
                 <p className="dashboard__stats-container-header-title">
                   Total Earnings
@@ -54,7 +107,7 @@ const Dashboard = () => {
                 </div>
               </div>
               <p className="dashboard__stats-container-value">$ 4,236</p>
-            </div>
+            </div> */}
           </section>
 
           <div className="dashboard__line">
@@ -63,7 +116,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="dashboard__products">
+        {/* <div className="dashboard__products">
           <p className="dashboard__products-title">Product Performances</p>
           <section className="dashboard__products-doughnut">
             <Doughnut />
@@ -124,7 +177,7 @@ const Dashboard = () => {
               See More
             </button>
           </section>
-        </div>
+        </div> */}
       </div>
     </div>
   );
