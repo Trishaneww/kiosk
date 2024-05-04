@@ -87,8 +87,7 @@ const Orders = () => {
         time: "4:05pm",
         amount: "72.90",
         payment: "Debit",
-    },
-
+    }
   ];
 
   return (

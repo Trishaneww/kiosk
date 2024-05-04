@@ -1,0 +1,50 @@
+.charts {
+    display:flex;
+    flex-direction: column;
+    margin-top:2rem;
+
+    &-container {
+        display:flex;
+        flex-direction: column;
+
+        &-analytics {
+            display:flex;
+            flex-direction: column;
+            height:60px;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+
+            &-header {
+                color:rgb(186, 186, 186);
+                margin:0;
+            }
+
+            &-stats {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                gap:1rem;
+                margin:0;
+
+                &-number {
+                    font-size: 22px;
+                    font-weight: 700;
+                }
+
+                &-percentage {
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 60px;
+                    height:25px;
+                    border-radius: 50px;
+                    background-color: rgb(176, 251, 240);
+                    color:rgb(4, 150, 186);
+                    font-weight: 700;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    
+}

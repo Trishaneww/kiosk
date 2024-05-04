@@ -1,183 +1,89 @@
 import "./Viewmenu.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import MenuSidebar from "../menuSidebar/MenuSidebar";
 import { Link, useNavigate } from "react-router-dom";
 import Item from "../item/Item";
 import CartItem from "../cartItem/CartItem";
 import { IoLocationSharp } from "react-icons/io5";
-import { FiLogOut } from "react-icons/fi";;
+import { FiLogOut } from "react-icons/fi";
 
 const Viewmenu = () => {
-  //   const [menuItems, setMenuItems] = useState([]);
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       const res = await axios.get("");
-  //       setMenuItems(res.data)
-  //     };
-  //     fetchData();
-  //   }, []);
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("http://localhost:3307/products/1");
+        setProducts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
 
   const selected = [
     {
-      id: 1,
-      name: "Meat Lovers",
-      price: 15.25,
-      calories: 1200,
+      id: 4,
+      orderid: "Z9KP1",
+      name: "Tikka Bowl",
+      calories: 590,
+      price: 14.79,
+      cost: 10,
+      status: false,
     },
     {
-      id: 1,
-      name: "Cheese Lovers",
-      price: 11.25,
-      calories: 1200,
+      id: 9,
+      orderid: "TF2V3",
+      name: "Greek Salad",
+      calories: 580,
+      price: 11.49,
+      cost: 8.75,
+      status: true,
     },
     {
-      id: 1,
-      name: "Pepporoni Lovers",
-      price: 13.25,
-      calories: 1200,
+      id: 10,
+      orderid: "TF2V3",
+      name: "Kale Ceasar Salad",
+      calories: 670,
+      price: 11.49,
+      cost: 7,
+      status: true,
     },
     {
-      id: 1,
-      name: "Canadian Lovers",
-      price: 15.25,
-      calories: 1200,
+      id: 12,
+      orderid: "K1PO5",
+      name: "Texas SmokeHouse Roll",
+      calories: 840,
+      price: 12.99,
+      cost: 8,
+      status: false,
     },
   ];
 
-  const categories = [
-    {
-      id: 1,
-      name: "Pizza Combos",
-    },
-    {
-      id: 2,
-      name: "Signature Pizzas",
-    },
-    {
-      id: 3,
-      name: "Custom Pizzas",
-    },
-    {
-      id: 4,
-      name: "Burger Combos",
-    },
-    {
-      id: 4,
-      name: "Signature Burgers",
-    },
-    {
-      id: 4,
-      name: "Custom Burgers",
-    },
-    {
-      id: 5,
-      name: "Sides",
-    },
-    {
-      id: 6,
-      name: "Drinks",
-    },
-    {
-      id: 7,
-      name: "Desserts",
-    },
-  ];
-
-  const menuItems = [
-    {
-      id: 1,
-      name: "Meat Lovers",
-      price: 15.25,
-      calories: 1200,
-    },
-    {
-      id: 2,
-      name: "Cheese Lovers",
-      price: 11.25,
-      calories: 1200,
-    },
-    {
-      id: 3,
-      name: "Pepporoni Lovers",
-      price: 13.25,
-      calories: 1200,
-    },
-    {
-      id: 4,
-      name: "Canadian Lovers",
-      price: 15.25,
-      calories: 1200,
-    },
-    {
-      id: 5,
-      name: "Hawaiian Lovers",
-      price: 15.25,
-      calories: 1200,
-    },
-    {
-      id: 5,
-      name: "Hawaiian Lovers",
-      price: 15.25,
-      calories: 1200,
-    },
-    {
-      id: 5,
-      name: "Hawaiian Lovers",
-      price: 15.25,
-      calories: 1200,
-    },
-    {
-      id: 5,
-      name: "Hawaiian Lovers",
-      price: 15.25,
-      calories: 1200,
-    },
-    {
-      id: 5,
-      name: "Hawaiian Lovers",
-      price: 15.25,
-      calories: 1200,
-    },
-    {
-      id: 5,
-      name: "Hawaiian Lovers",
-      price: 15.25,
-      calories: 1200,
-    },
-  ];
+  const getDate = (timestamp) => {
+    const date = new Date(timestamp);
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
 
   return (
     <>
-      <navbar className="menu-navbar">
-        <div className="menu-navbar__container">
-          <p className="menu-navbar__container-logo">FOOD<span>BYTE</span></p>
-          <div className="menu-navbar__location">
-            <IoLocationSharp />
-            <p>2242 Winston Park Blvd</p>
-          </div>
-        </div>
-        <FiLogOut size={25}/>
-      </navbar>
-
-      
       <div className="menu">
         <div className="menu-display">
-          <section className="menu-display__categories">
-            {categories.map((category) => (
-              <div className="menu-display__categories-select">
-                <p>{category.name}</p>
-              </div>
-            ))}
-          </section>
+          <MenuSidebar />
 
           <section className="menu-display__items">
-            {menuItems.map((item) => (
-              <Link className="link" to={`/menu/${item.id}`}>
+            {products.map((product) => (
+              <Link className="link" to={`/menu/${product.id}`}>
                 <Item
-                  key={item.id}
-                  price={item.price}
-                  name={item.name}
-                  calories={item.calories}
+                  key={product.id}
+                  id={product.id}
+                  price={product.price}
+                  name={product.name}
+                  calories={product.calories}
                 />
               </Link>
             ))}
@@ -192,7 +98,12 @@ const Viewmenu = () => {
             </div>
             <div>
               {selected.map((item) => (
-                <CartItem key={item.id} name={item.name} price={item.price} />
+                <CartItem
+                  key={item.id}
+                  name={item.name}
+                  price={item.price}
+                  id={item.id}
+                />
               ))}
             </div>
 

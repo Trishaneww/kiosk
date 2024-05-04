@@ -3,10 +3,10 @@
     flex-direction: column;
     align-items: center;
     color:black;
-    margin:1rem 1.3rem 1rem 1.3rem;
     background-color: white;
-    width: 230px;
-    height:280px;
+    width: 260px;
+    height:260px;
+    padding: 1rem 0 0 0;
     border-radius: 30px;
 
 
@@ -15,7 +15,7 @@
     }
 
     &-price {
-        color: rgb(219, 133, 13);
+        color: rgb(4, 151, 1);
         font-size: 15px;
     }
 
@@ -25,6 +25,7 @@
 
     & img {
         max-width: 150px;
+        height:150px;
     }
 
     &-details {
@@ -35,7 +36,7 @@
 
         &__calories {
             width:100px;
-            background-color: rgb(238, 238, 238);
+            background-color: rgb(234, 234, 234);
             border: none;
             height: 36px;
             border-radius: 50px;

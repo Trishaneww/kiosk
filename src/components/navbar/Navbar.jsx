@@ -22,7 +22,7 @@ const Homepage = () => {
 
           <div className="sidebar-link">
             <MdRestaurantMenu size={20} />
-            <p>Menu</p>
+            <p>Products</p>
           </div>
 
           <div className="sidebar-link">
