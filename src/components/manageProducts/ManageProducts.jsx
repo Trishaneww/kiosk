@@ -3,84 +3,57 @@ import "../../styles/global.scss";
 import Navbar from "../navbar/Navbar";
 import { MdOutlineAdd } from "react-icons/md";
 import { SlArrowDown } from "react-icons/sl";
-import { useState } from "react";
-import ProductChart from '../productChart/ProductChart';
+import { useState, useEffect } from "react";
+import ProductChart from "../productChart/ProductChart";
 import { IoSearchSharp } from "react-icons/io5";
+import axios from "axios";
 
 const ManageProducts = () => {
   const [search, setSearch] = useState({
     search: "",
   });
 
+  const [newProduct, setNewProduct] = useState({
+    menu_id: 1,
+    productid: "TF2V3",
+    name: "Kale Ceasar Salad",
+    calories: 670,
+    price: 11.49,
+    cost: 7,
+    status: true,
+    description:"default bowl"
+  });
+
   const handleChange = (e) => {
-    setSearch((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setNewProduct((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const products = [
-    {
-      id: 1,
-      orderid: "AJ5S6",
-      name: "Oaxaca Bowl",
-      calories: 660,
-      price: 15.49,
-      cost: 10,
-      status: true,
-    },
-    {
-      id: 2,
-      orderid: "AK971",
-      name: "Teriyaki Twiist Bowl",
-      calories: 590,
-      price: 14.29,
-      cost: 10,
-      status: true,
-    },
-    {
-      id: 3,
-      orderid: "B9SS6",
-      name: "Mezze Delight Bowl",
-      calories: 630,
-      price: 13.79,
-      cost: 10,
-      status: true,
-    },
-    {
-      id: 4,
-      orderid: "Z9KP1",
-      name: "Tikka Bowl",
-      calories: 590,
-      price: 14.79,
-      cost: 10,
-      status: false,
-    },
-    {
-      id: 5,
-      orderid: "SP766",
-      name: "Chipolte Cheddar Bowl",
-      calories: 730,
-      price: 14.29,
-      cost: 10,
-      status: true,
-    },
-    {
-      id: 6,
-      orderid: "XW290",
-      name: "Bhudda Bowl",
-      calories: 540,
-      price: 13.79,
-      cost: 10,
-      status: false,
-    },
-    {
-      id: 7,
-      orderid: "TF2V3",
-      name: "Cobb Salad",
-      calories: 430,
-      price: 11.99,
-      cost: 7,
-      status: true,
-    },
-  ];
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("http://localhost:3307/products/1");
+        setProducts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const handleClick = async(e) => {
+    e.preventDefault()
+    try {
+      console.log("clicked")
+      await axios.post("http://localhost:3307/products", newProduct)
+    } catch (err) {
+      console.log(err)
+    }
+  } 
+
+  console.log(newProduct)
+
 
   return (
     <div className="main">
@@ -97,15 +70,15 @@ const ManageProducts = () => {
               onChange={handleChange}
             />
             <IoSearchSharp className="product-dashboard-sidebar-searchbar-icon" /> */}
-            <div className="searchbar">
-              <input
-                name="search"
-                type="text"
-                placeholder="search for items"
-                onChange={handleChange}
-              />
-              <IoSearchSharp className="searchbar__icon" size={22} />
-            </div>
+          <div className="searchbar">
+            <input
+              name="search"
+              type="text"
+              placeholder="search for items"
+              onChange={handleChange}
+            />
+            <IoSearchSharp className="searchbar__icon" size={22} />
+          </div>
 
           <section className="product-dashboard-sidebar-analytics">
             <div className="product-dashboard-sidebar-analytics-display">
@@ -127,7 +100,7 @@ const ManageProducts = () => {
               </div>
             </div>
             <div className="product-dashboard-sidebar-analytics-graph">
-                <ProductChart />
+              <ProductChart />
             </div>
           </section>
         </div>
@@ -180,13 +153,18 @@ const ManageProducts = () => {
           </section>
 
           {products.map((product) => (
-            <div className="product-dashboard-display-container">
+            <div className="product-dashboard-display-container" key={product.id}>
               <div className="product-dashboard-display-categories-image">
-                <img src={require(`../../assets/product${product.id}.png`)} />
+                {product.id >= 16 && (
+                  <img src={require(`../../assets/product2.png`)} />
+                )}
+                {product.id < 16 && (
+                   <img src={require(`../../assets/product${product.id}.png`)} />
+                )}
               </div>
 
               <div className="product-dashboard-display-categories-id">
-                <p>{product.orderid}</p>
+                <p>#{product.productid}</p>
               </div>
 
               <div className="product-dashboard-display-categories-name">
@@ -202,8 +180,8 @@ const ManageProducts = () => {
               </div>
 
               <div className="product-dashboard-display-categories-status">
-                <div id={product.status === true ? "available" : "unavailable"}>
-                  <p>{product.status === true ? "Available" : "Sold Out"}</p>
+                <div id={product.status === 1 ? "available" : "unavailable"}>
+                  <p>{product.status === 1 ? "Available" : "Sold Out"}</p>
                 </div>
               </div>
 
@@ -214,6 +192,64 @@ const ManageProducts = () => {
           ))}
         </div>
       </div>
+
+      <form className="login-form">
+        <h1>Create new product</h1>
+        <div>
+          <input
+            name="productid"
+            type="text"
+            placeholder="ProductID"
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <input
+            name="name"
+            type="text"
+            placeholder="Product Name"
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <input
+            name="calories"
+            type="text"
+            placeholder="Calories"
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <input
+            name="price"
+            type="text"
+            placeholder="Price"
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <input
+            name="cost"
+            type="text"
+            placeholder="Cost"
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <input
+            name="description"
+            type="text"
+            placeholder="Description"
+            onChange={handleChange}
+          />
+        </div>
+        <button className="login-page__btn" onClick={handleClick}>Create</button>
+      </form>
     </div>
   );
 };

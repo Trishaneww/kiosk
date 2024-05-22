@@ -13,7 +13,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        
         <Routes>
           <Route path='/' element={<Sidebar  />} />
           <Route path='/login' element={<Login />} />
@@ -24,7 +23,6 @@ function App() {
           <Route path="/manageproducts" element={<ManageProducts />} />
         </Routes>
       </div>
-    
     </BrowserRouter>
   );
 }
