@@ -14,8 +14,8 @@ const Sidebar = () => {
       <div className="sidebar">
         <div className="sidebar-content">
           <div className="sidebar-burgerContainer">
-            <div className="sidebar-burgerContainer-trigger"></div>
-            <div className="sidebar-burgerContainer-menugit"></div>
+            <div className="sidebar-burgerContainer-burgerTrigger"></div>
+            <div className="sidebar-burgerContainer-burgerMenu"></div>
           </div>
           <ul>
             <li>
